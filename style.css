@@ -5,13 +5,26 @@ body {
 }
 
 header {
-    background-image: url('background.png'); /* 设置图片作为标题背景 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.png'); /* 背景图片并带有渐变效果 */
     background-size: cover; /* 让背景图像覆盖整个 header 区域 */
     background-position: center; /* 居中显示背景图像 */
     background-repeat: no-repeat; /* 防止背景图像重复 */
-    padding: 60px 20px; /* 增加 padding 让内容有足够的空间 */
+    background-attachment: fixed; /* 背景图像固定在窗口中，不随页面滚动 */
+    padding: 60px 20px;
     text-align: center;
     color: white;
+}
+
+header::after {
+    content: '';
+    display: block;
+    height: 200px; /* 根据需要调整 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 
 nav button {
