@@ -1,20 +1,17 @@
 body {
-    background-image: url('background.png'); /* 使用你上传的图片文件名 */
-    background-size: cover; /* 让背景图像覆盖整个页面 */
-    background-position: center; /* 居中显示背景图像 */
-    background-repeat: no-repeat; /* 防止背景图像重复 */
-    background-attachment: fixed; /* 背景图像固定在窗口中，不随页面滚动 */
-    margin: 0; /* 移除默认边距 */
-    font-family: Arial, sans-serif; /* 设置字体 */
-    color: white; /* 设置文字颜色为白色以更好地与背景对比 */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-
 header {
-    background: #004080;
-    color: white;
-    padding: 10px 20px;
+    background-image: url('background.png'); /* 使用你上传的图片文件名 */
+    background-size: cover; /* 让背景图像覆盖整个 header 区域 */
+    background-position: center; /* 居中显示背景图像 */
+    background-repeat: no-repeat; /* 防止背景图像重复 */
+    padding: 20px;
     text-align: center;
+    color: white; /* 确保标题文字在背景上可见 */
 }
 
 nav button {
@@ -31,6 +28,9 @@ nav button:hover {
 
 .content {
     padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    color: black; /* 使内容部分文字易于阅读 */
 }
 
 .hidden {
