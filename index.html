@@ -10,10 +10,6 @@
 <body>
     <header>
         <h1>My Favourite Ukrainian Song: Гей, соколи!</h1>
-        <nav>
-            <button onclick="switchLanguage('en')">English</button>
-            <button onclick="switchLanguage('uk')">Українська</button>
-        </nav>
     </header>
     
     <main>
@@ -23,24 +19,7 @@
 
             <p>According to historical research, the song reflects the broader struggles of the Ukrainian Cossacks during the 17th and 18th centuries, when they frequently fought against foreign powers, such as the Polish-Lithuanian Commonwealth and later the Russian Empire. The Cossack's departure in the song represents their duty to defend their land, often leading to painful separations from their families and loved ones.<sup><a href="#ref2">2</a></sup></p>
         </section>
-
-        <section id="content-uk" class="content hidden">
-            <h2>Про "Гей, соколи!"</h2>
-            <p>"Гей, соколи!" — це популярна українська народна пісня з глибоким культурним значенням. Вона розповідає про тугу за рідним краєм і коханими...</p>
-        </section>
     </main>
-
-    <script>
-        function switchLanguage(lang) {
-            if (lang === 'en') {
-                document.getElementById('content-en').classList.remove('hidden');
-                document.getElementById('content-uk').classList.add('hidden');
-            } else if (lang === 'uk') {
-                document.getElementById('content-en').classList.add('hidden');
-                document.getElementById('content-uk').classList.remove('hidden');
-            }
-        }
-    </script>
 
     <footer>
         <h3>References</h3>
