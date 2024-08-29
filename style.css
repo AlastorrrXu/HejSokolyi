@@ -1,9 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    background-image: url('background.png'); /* 使用你上传的图片文件名 */
+    background-size: cover; /* 让背景图像覆盖整个页面 */
+    background-position: center; /* 居中显示背景图像 */
+    background-repeat: no-repeat; /* 防止背景图像重复 */
+    background-attachment: fixed; /* 背景图像固定在窗口中，不随页面滚动 */
+    margin: 0; /* 移除默认边距 */
+    font-family: Arial, sans-serif; /* 设置字体 */
+    color: white; /* 设置文字颜色为白色以更好地与背景对比 */
 }
+
 
 header {
     background: #004080;
