@@ -1,44 +1,165 @@
+/* 全局样式 */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
+    font-family: 'Arial', sans-serif; /* 使用干净简洁的字体 */
+    color: #333; /* 主文字颜色 */
+    background-color: #f5f5f5; /* 浅灰色背景 */
+    padding-left: 200px; /* 为侧边栏目录留出空间 */
+    cursor: url('cursor.png'), auto; /* 设置自定义光标 */
+    line-height: 1.6; /* 提升文本可读性 */
 }
 
-header {
-    background-image: url('background.png'); /* 设置图片作为标题背景 */
-    background-size: cover; /* 让背景图像覆盖整个 header 区域 */
-    background-position: center; /* 居中显示背景图像 */
-    background-repeat: no-repeat; /* 防止背景图像重复 */
-    background-attachment: scroll; /* 让背景图像随页面滚动 */
-    padding: 100px 20px; /* 增加 padding 以便图片和文本有足够空间 */
-    text-align: center;
-    color: white;
-    position: relative; /* 确保内容在 header 内部定位 */
+/* 导航栏样式 */
+nav {
+    position: fixed; /* 固定导航栏 */
+    top: 0;
+    left: 0;
+    width: 200px; /* 目录宽度 */
+    height: 100%;
+    background: linear-gradient(180deg, #0033a0 0%, #0055cc 100%); /* 使用渐变色背景 */
+    padding-top: 40px;
+    overflow-y: auto; /* 允许滚动 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 添加右侧阴影 */
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
 }
 
-.title-section {
-    padding-top: 20px;
-}
-
+/* 导航按钮样式 */
 nav button {
-    background: #f2f2f2;
+    background: none; /* 移除默认背景 */
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    text-align: left; /* 左对齐文本 */
+    font-size: 18px; /* 增大字体尺寸 */
+    color: #fff; /* 使用白色文字 */
+    cursor: url('cursor.png'), auto; /* 设置按钮上的自定义光标 */
+    transition: background-color 0.3s, color 0.3s; /* 添加过渡效果 */
 }
 
 nav button:hover {
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.2); /* 悬停时背景色变为半透明 */
+    color: #fff; /* 悬停时文字保持白色 */
 }
 
+/* 标题部分样式 */
+header {
+    background-image: url('background.png'); /* 使用自定义背景图片 */
+    background-size: cover; /* 背景图像覆盖整个区域 */
+    background-position: center; /* 居中显示背景图像 */
+    background-repeat: no-repeat; /* 背景图像不重复 */
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff; /* 标题文字颜色改为白色 */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 为标题添加阴影 */
+}
+
+/* 内容部分样式 */
 .content {
-    padding: 20px;
+    padding: 30px;
     max-width: 800px;
-    margin: auto;
-    color: black; /* 使内容部分文字易于阅读 */
+    margin: 40px auto; /* 添加更多间距以避免内容被固定导航栏覆盖 */
+    background-color: white; /* 白色背景 */
+    border-radius: 10px; /* 添加圆角效果 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* 添加阴影效果 */
+    color: #333; /* 主内容文字颜色 */
+    margin-bottom: 150px; /* 为固定页脚留出更多空间 */
 }
 
+/* 内容中的引用样式 */
+.content sup {
+    color: black; /* 修改上标的颜色为黑色 */
+}
+
+/* 音频部分样式 */
+.audio-section {
+    text-align: center; /* 居中显示 */
+    margin-bottom: 20px; /* 在介绍文字下方添加间距 */
+}
+
+.audio-section p {
+    margin-top: 15px; /* 在图标下方添加一些间距 */
+    font-size: 18px;
+}
+
+/* 唱片图标样式 */
+.music-disc {
+    width: 150px; /* 圆形图标大小 */
+    height: 150px;
+    margin: 0 auto; /* 居中 */
+    border-radius: 50%; /* 圆形 */
+    overflow: hidden; /* 隐藏溢出部分 */
+    border: 5px solid #333; /* 添加唱片边框 */
+    cursor: pointer; /* 鼠标悬停时为指针 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    transition: transform 0.3s; /* 添加过渡效果 */
+}
+
+.music-disc img {
+    width: 100%; /* 适应容器大小 */
+    height: 100%;
+    object-fit: cover; /* 确保图片填充容器 */
+    border-radius: 50%; /* 确保图像为圆形 */
+}
+
+/* 添加旋转动画 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.music-disc.spin {
+    animation: spin 4s linear infinite; /* 设置旋转动画 */
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #0033a0; /* 使用乌克兰国旗的蓝色 */
+    color: white; /* 页脚文字为白色 */
+    padding: 20px;
+    text-align: center;
+    position: fixed; /* 固定位置 */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* 添加顶部阴影效果 */
+    display: none; /* 默认隐藏 */
+}
+
+/* 当滚动到页面底部时显示页脚 */
+.footer.visible {
+    display: block; /* 滑动到底部时显示 */
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+}
+
+.footer ol {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0;
+    list-style-position: inside; /* 列表项对齐方式 */
+}
+
+.footer ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* 链接样式 */
+a {
+    color: #0055cc; /* 链接颜色 */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+/* 隐藏元素样式 */
 .hidden {
     display: none;
 }

@@ -6,27 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Favourite Ukrainian Song: Hej Sokoly</title>
     <link rel="stylesheet" href="style.css"> <!-- 引用 CSS 文件 -->
+    <script>
+        // JavaScript用于检测滚动并显示参考文献
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('.footer');
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+        });
+
+        // JavaScript用于控制音频播放和旋转动画
+        function playAudio() {
+            const audio = document.getElementById('ukrainian-song');
+            const disc = document.querySelector('.music-disc');
+
+            if (audio.paused) {
+                audio.play();
+                disc.classList.add('spin'); // 添加旋转动画
+            } else {
+                audio.pause();
+                disc.classList.remove('spin'); // 移除旋转动画
+            }
+        }
+    </script>
 </head>
 <body>
+    <!-- 固定的悬挂式目录 -->
+    <nav>
+        <button>Introduction</button>
+        <button>About</button>
+        <button>Contact</button>
+    </nav>
+
     <header>
         <h1>My Favourite Ukrainian Song: Гей, соколи!</h1>
     </header>
     
     <main>
         <section id="content-en" class="content">
+            <!-- 添加唱片图标部分，位于介绍文字上方 -->
+            <div class="audio-section">
+                <div class="music-disc" onclick="playAudio()">
+                    <!-- 图标 -->
+                    <img src="music.png" alt="Play Ukrainian Song">
+                </div>
+                <p><strong>Press the record to play/Натисніть запис, щоб відтворити</strong></p>
+                <audio id="ukrainian-song" src="hej sokoly.mp3"></audio> <!-- 音频文件 -->
+            </div>
+            
             <h2>About "Гей, соколи!"</h2>
             <p>"Гей, соколи!" is traditionally considered a Ukrainian folk song, believed to be written by Tomasz Padura, though this attribution remains debated among scholars.<sup><a href="#ref1">1</a></sup> The song is about a young Cossack saying farewell to his beloved and Ukraine, symbolizing themes of love, separation, and longing for the homeland. It has become an enduring cultural symbol, especially during times of conflict, like the recent Russian invasion of Ukraine, where it was used to boost morale and express solidarity.</p>
 
-            <p>According to historical research, the song reflects the broader struggles of the Ukrainian Cossacks during the 17th and 18th centuries, when they frequently fought against foreign powers, such as the Polish-Lithuanian Commonwealth and later the Russian Empire. The Cossack's departure in the song represents their duty to defend their land, often leading to painful separations from their families and loved ones.<sup><a href="#ref2">2</a></sup></p>
+            <h2>Historical and Social Background</h2>
+            <h3>Polish-Lithuanian Commonwealth Occupation of Ukraine</h3>
+            <p>Before the Union of Lublin in 1569, the territories of modern-day Ukraine were largely under the control of the Grand Duchy of Lithuania. With the signing of the Union of Lublin, Poland and Lithuania merged to form the Polish-Lithuanian Commonwealth, a political and military alliance designed to counter threats from neighboring states like Muscovy and the Ottoman Empire. This agreement transferred significant Ukrainian regions—including Volhynia, Podolia, and the Kiev Voivodeship—from Lithuanian to direct Polish control.</p>
+            <p>The new political structure allowed Polish nobles (szlachta) to acquire vast Ukrainian estates, which they governed with near-absolute authority. They implemented a strict feudal system in which Ukrainian peasants were subjected to serfdom. This meant peasants were bound to the land and forced to provide labor or pay taxes to the Polish landlords. Economic exploitation was rampant, as Ukrainian peasants often faced increased obligations, heavier taxation, and fewer rights compared to Polish peasants. The loss of freedoms led to significant economic hardship and a deep resentment of Polish rule.</p>
+            <h3>Cossacks(Козаки) and Freedom</h3>
+            <p>The Cossacks emerged in the 15th and 16th centuries as free warrior groups in the frontier regions of what is now Ukraine, especially in the Dnieper River Basin. Initially, they were formed by runaway peasants, serfs, adventurers, and outlaws fleeing feudal oppression in Polish, Lithuanian, and Russian territories, seeking freedom in the vast steppe lands. The sparsely populated borderlands, beyond the control of centralized authorities, provided a suitable environment for these groups to establish independent communities.</p>
+            <p>However, after the Union of Lublin in 1569, which transferred Ukrainian territories from Lithuanian to Polish control, the Polish-Lithuanian Commonwealth began imposing stricter control over these regions. This imposition of authority clashed with the Cossacks' inherent love of freedom, a core aspect of Ukrainian identity, leading to widespread dissatisfaction among many Cossacks.</p>
+            <h3>Reasons for Ukrainian Resistance</h3>
+            <p>The resistance against Polish control stemmed from grievances such as social and economic oppression, religious discrimination, and political marginalization. Ukrainians, especially the Cossacks, felt disenfranchised and desired greater autonomy and the right to self-govern.</p>
+
+            <h3>Detailed Account of the Uprisings</h3>
+            <h4>Khmelnytsky Uprising (1648-1657)</h4>
+            <p>Bohdan Khmelnytsky, a Cossack leader, ignited a widespread rebellion against Polish rule in 1648. The uprising involved alliances with Tatars and Muscovites, significant battles, and political maneuvering, leading to massive social upheaval in Ukraine.</p>
+
+            <h4>Subsequent Uprisings and Continued Resistance</h4>
+            <p>Following the Khmelnytsky Uprising, other rebellions like the Pavlyuk and Ostrianytsia Uprisings (1637-1638) and the Koliivshchyna Rebellion (1768) continued the struggle against Polish control.</p>
+
+            <h3>Long-Term Consequences</h3>
+            <p>The continuous uprisings weakened the Polish-Lithuanian Commonwealth, leading to partitions and the transfer of Ukrainian lands. These struggles contributed to a distinct Ukrainian identity marked by resistance against external control.</p>
+
+            <h3>Modern Relevance</h3>
+            <p>During the Russian invasion of Ukraine in 2022, "Hej, Sokoły!" was revived as a song of resistance and solidarity. It served as an anthem of unity, bridging historical and contemporary struggles for freedom, as seen in a montage video on YouTube by Ukrainian forces using the song to boost morale and encourage the defense of their homeland.</p>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <h3>References</h3>
-        <ul>
-            <li id="ref1">Kharchyshyn, O. (2019). "Hey, Sokoly!": Lyrics and Contexts of the Song. Ethnology Notebooks, Issue 5, National Academy of Sciences of Ukraine. Retrieved from <a href="https://nz.lviv.ua">nz.lviv.ua</a></li>
-            <li id="ref2">Balandiina, N. F. (2020). "POLISH-UKRAINIAN SONG „HEJ, SOKOŁY!” („HEJ, EAGLES!”): SOCIAL AND HISTORICAL CONTEXTS AND SEMANTIC DOMINANTS". Slovyanskyy Zbirnyk, Issue 23. DOI: <a href="https://doi.org/10.18524/2413-0613.2019.23.183126">10.18524/2413-0613.2019.23.183126</a></li>
-        </ul>
+        <ol>
+            <li id="ref1">
+                Kharchyshyn, O. (2019). Hey, Sokoly!: Lyrics and contexts of the song. <i>Ethnology Notebooks</i>, (5), National Academy of Sciences of Ukraine. Retrieved from <a href="https://nz.lviv.ua" target="_blank">https://nz.lviv.ua</a>
+            </li>
+            <li id="ref2">
+                Balandiina, N. F. (2020). Polish-Ukrainian song "Hej, Sokoły!" ("Hey, Eagles!"): Social and historical contexts and semantic dominants. <i>Slovyanskyy Zbirnyk</i>, 23, 183-126. <a href="https://doi.org/10.18524/2413-0613.2019.23.183126" target="_blank">https://doi.org/10.18524/2413-0613.2019.23.183126</a>
+            </li>
+        </ol>
     </footer>    
 </body>
 </html>
