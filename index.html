@@ -36,8 +36,8 @@
     <!-- 固定的悬挂式目录 -->
     <nav>
         <button>Introduction</button>
-        <button>About</button>
-        <button>Contact</button>
+        <button>Content</button>
+        <button>References</button>
     </nav>
 
     <header>
@@ -45,7 +45,7 @@
     </header>
     
     <main>
-        <section id="content-en" class="content">
+        <section id="Introduction" class="content">
             <!-- 添加唱片图标部分，位于介绍文字上方 -->
             <div class="audio-section">
                 <div class="music-disc" onclick="playAudio()">
@@ -58,7 +58,19 @@
             
             <h2>About "Гей, соколи!"</h2>
             <p>"Гей, соколи!" is traditionally considered a Ukrainian folk song, believed to be written by Tomasz Padura, though this attribution remains debated among scholars.<sup><a href="#ref1">1</a></sup> The song is about a young Cossack saying farewell to his beloved and Ukraine, symbolizing themes of love, separation, and longing for the homeland. It has become an enduring cultural symbol, especially during times of conflict, like the recent Russian invasion of Ukraine, where it was used to boost morale and express solidarity.</p>
-
+            <section id="video-section">
+                <h2>Watch "Hej, Sokoly!" Performance</h2>
+                <div class="video-container">
+                    <!-- 封面图片 -->
+                    <a href="https://www.youtube.com/watch?v=10Ha80EgaB0" target="_blank">
+                        <div class="video-thumbnail">
+                            <img src="video1.jpg" alt="Hej, Sokoly! Performance">
+                            <div class="overlay"></div> <!-- 鼠标悬停时的暗层 -->
+                        </div>
+                    </a>
+                </div>
+                <p>Click the thumbnail above to watch an inspiring performance of "Hej, Sokoly!" on YouTube.</p>
+            </section>
             <h2>Historical and Social Background</h2>
             <h3>Polish-Lithuanian Commonwealth Occupation of Ukraine</h3>
             <p>Before the Union of Lublin in 1569, the territories of modern-day Ukraine were largely under the control of the Grand Duchy of Lithuania. With the signing of the Union of Lublin, Poland and Lithuania merged to form the Polish-Lithuanian Commonwealth, a political and military alliance designed to counter threats from neighboring states like Muscovy and the Ottoman Empire. This agreement transferred significant Ukrainian regions—including Volhynia, Podolia, and the Kiev Voivodeship—from Lithuanian to direct Polish control.</p>
@@ -79,12 +91,24 @@
             <h3>Long-Term Consequences</h3>
             <p>The continuous uprisings weakened the Polish-Lithuanian Commonwealth, leading to partitions and the transfer of Ukrainian lands. These struggles contributed to a distinct Ukrainian identity marked by resistance against external control.</p>
 
-            <h3>Modern Relevance</h3>
+            <h2>Modern Relevance</h2>
             <p>During the Russian invasion of Ukraine in 2022, "Hej, Sokoły!" was revived as a song of resistance and solidarity. It served as an anthem of unity, bridging historical and contemporary struggles for freedom, as seen in a montage video on YouTube by Ukrainian forces using the song to boost morale and encourage the defense of their homeland.</p>
+                  <!-- 视频封面图片 -->
+                  <div class="youtube-video">
+                    <a href="https://www.youtube.com/watch?v=VeFu79TsotA" target="_blank">
+                        <div class="youtube-video iframe">
+                            <img src="video2.jpg" alt="Hej, Sokoly! Performance on YouTube">
+                            <div class="overlay"></div> <!-- 鼠标悬停时显示的暗层 -->
+                        </div>
+                    </a>
+                  </div>
+            <div style="height: 150px;"></div>
         </section>
     </main>
+<!-- 空的分隔占位符 -->
 
-    <footer class="footer">
+
+    <footer id="References" class="footer">
         <h3>References</h3>
         <ol>
             <li id="ref1">

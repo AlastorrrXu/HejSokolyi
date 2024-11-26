@@ -163,3 +163,112 @@ a:hover {
 .hidden {
     display: none;
 }
+/* 视频区域整体样式 */
+#video-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* 减少上下的边距 */
+    background-color: #f9f9f9; /* 确保背景颜色一致 */
+    text-align: center;
+}
+
+/* 视频容器样式 */
+.video-container {
+    position: relative;
+    width: 80%; /* 图片宽度相对屏幕 */
+    max-width: 600px; /* 最大宽度 */
+    margin: 0; /* 移除默认外边距 */
+    text-align: center;
+}
+
+/* 视频缩略图样式 */
+.video-thumbnail img {
+    display: block;
+    width: 100%;
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    transition: filter 0.3s ease; /* 鼠标悬停效果 */
+}
+
+/* 鼠标悬停时图片变暗 */
+.video-thumbnail:hover img {
+    filter: brightness(50%);
+}
+
+/* 鼠标悬停时的覆盖层 */
+.video-thumbnail .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-thumbnail:hover .overlay {
+    opacity: 1;
+}
+
+/* 段落文本居中 */
+#video-section p {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* 整体容器样式 */
+.youtube-video {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平方向居中 */
+    align-items: center; /* 垂直方向居中 */
+    margin: 20px auto; /* 上下间距并水平居中 */
+    width: 100%; /* 确保容器宽度适应父级 */
+}
+
+/* 内部容器样式 */
+.youtube-video.iframe {
+    position: relative; /* 相对定位，方便处理子元素的悬停效果 */
+    width: 80%; /* 缩略图宽度占父容器的 80% */
+    max-width: 800px; /* 最大宽度限制为 800px */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+    text-align: center; /* 确保内容居中 */
+}
+
+/* 视频缩略图图片样式 */
+.youtube-video.iframe img {
+    display: block; /* 将图片设为块级元素，避免下方留空 */
+    width: 100%; /* 图片宽度占满容器 */
+    border-radius: 10px; /* 添加圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    transition: filter 0.3s ease; /* 鼠标悬停时的渐变效果 */
+}
+
+/* 鼠标悬停时图片变暗 */
+.youtube-video.iframe:hover img {
+    filter: brightness(50%);
+}
+
+/* 鼠标悬停时的黑色覆盖层样式 */
+.youtube-video.iframe .overlay {
+    position: absolute; /* 覆盖层相对于父容器绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 覆盖层与父容器大小一致 */
+    height: 100%;
+    border-radius: 10px; /* 覆盖层的圆角与图片一致 */
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色背景 */
+    opacity: 0; /* 初始状态为透明 */
+    transition: opacity 0.3s ease; /* 渐变显示效果 */
+}
+
+/* 鼠标悬停时显示覆盖层 */
+.youtube-video.iframe:hover .overlay {
+    opacity: 1;
+}
+
