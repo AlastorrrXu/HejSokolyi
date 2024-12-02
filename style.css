@@ -170,7 +170,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 20px 0; /* 减少上下的边距 */
-    background-color: #f9f9f9; /* 确保背景颜色一致 */
     text-align: center;
 }
 
@@ -270,5 +269,92 @@ a:hover {
 /* 鼠标悬停时显示覆盖层 */
 .youtube-video.iframe:hover .overlay {
     opacity: 1;
+}
+/* 新的视频部分样式 */
+#movie-section {
+    padding: 30px 0; /* 上下间距 */
+    text-align: center; /* 居中对齐内容 */
+}
+
+#movie-section h2 {
+    font-size: 24px;
+    color: #0033a0; /* 标题使用蓝色 */
+    margin-bottom: 20px;
+}
+
+/* 视频容器整体样式 */
+#movie-section .video-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平方向居中 */
+    align-items: center; /* 垂直方向居中 */
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto; /* 居中 */
+}
+
+/* 视频缩略图样式 */
+#movie-section .video-thumbnail {
+    position: relative; /* 相对定位，便于处理覆盖层 */
+    display: flex; /* Flexbox 布局用于内容居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 100%; /* 宽度占满容器 */
+    max-width: 600px; /* 最大宽度 */
+}
+
+#movie-section .video-thumbnail img {
+    display: block; /* 确保图片显示为块级元素 */
+    width: 100%; /* 图片宽度适应容器 */
+    border-radius: 12px; /* 添加圆角 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    transition: transform 0.3s ease, filter 0.3s ease; /* 鼠标悬停时的动画效果 */
+}
+
+/* 鼠标悬停时图片变暗并放大 */
+#movie-section .video-thumbnail:hover img {
+    transform: scale(1.05); /* 悬停时放大 */
+    filter: brightness(70%); /* 图片变暗 */
+}
+
+/* 覆盖层样式 */
+#movie-section .video-thumbnail .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明黑色背景 */
+    border-radius: 12px; /* 圆角与图片一致 */
+    opacity: 0; /* 初始透明 */
+    transition: opacity 0.3s ease; /* 鼠标悬停时的渐变效果 */
+}
+
+/* 鼠标悬停时显示覆盖层 */
+#movie-section .video-thumbnail:hover .overlay {
+    opacity: 1; /* 鼠标悬停时显示覆盖层 */
+}
+
+/* 覆盖层上的文字 */
+#movie-section .video-thumbnail .overlay::after {
+    content: "Play Video"; /* 添加文字内容 */
+    color: #fff; /* 文字颜色为白色 */
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中对齐文字 */
+}
+
+/* 针对移动端优化样式 */
+@media (max-width: 768px) {
+    #movie-section .video-container {
+        width: 90%; /* 调整宽度以适配移动端 */
+    }
+
+    #movie-section h2 {
+        font-size: 20px; /* 减小标题字体大小 */
+    }
 }
 
