@@ -455,3 +455,23 @@ a:hover {
     margin: 0;
     font-size: 16px;
 }
+.landmark-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.landmark-container img {
+    width: 250px; /* 增大图片宽度 */
+    height: auto; /* 高度自动调整 */
+    border-radius: 10px; /* 圆角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加图片阴影 */
+}
+
+.landmark-container p {
+    flex: 1; /* 文字内容占用剩余空间 */
+    font-size: 16px; /* 调整文字大小 */
+    line-height: 1.8; /* 提高行距，增加可读性 */
+    margin: 0;
+}
