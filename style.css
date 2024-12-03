@@ -396,3 +396,15 @@ a:hover {
     color: #0033a0; /* 深蓝色标题 */
     margin-bottom: 20px;
 }
+/* 图片部分样式 */
+.interview-image {
+    text-align: center; /* 居中显示图片 */
+    margin-bottom: 20px; /* 图片与文字的间距 */
+}
+
+.interview-image img {
+    max-width: 100%; /* 确保图片适应容器宽度 */
+    height: auto;
+    border-radius: 10px; /* 圆角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 图片阴影 */
+}
